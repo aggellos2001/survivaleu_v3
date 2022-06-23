@@ -1,0 +1,15 @@
+name: ${project.artifactId}
+version: ${project.version}
+main: dev.tsiantakis.survivaleu_v3.SurvivalEU
+api-version: '1.19'
+depend:
+  - CommandAPI
+permissions:
+  survivaleu.*:
+    description: All permissions
+    default: op
+    children:
+      survivaleu.shoutbypass: true
+  survivaleu.shoutbypass:
+    description: Bypass shout cooldown
+    default: op
