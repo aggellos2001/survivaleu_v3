@@ -19,6 +19,10 @@ public class ShoutCooldown {
         for (var audienceMember : audience) {
             if (audienceMember instanceof Player) {
                 var audiencePlayer = (Player) audienceMember;
+                if (!player.getWorld().getEnvironment().equals(audiencePlayer.getWorld().getEnvironment())) {
+                    isShout = true;
+                    break;
+                }
                 if (player.getLocation().distance(audiencePlayer.getLocation()) >= 200) {
                     isShout = true;
                     break;
